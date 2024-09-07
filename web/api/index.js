@@ -26,7 +26,9 @@ app.use((req, res, next) => {
 });
 
 // Database connection (You should use environment variables for the MongoDB URL in production)
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/FreeLancer")
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://ajithkumar200513:<db_password>@ak-solutions-services.ue7lv.mongodb.net/?retryWrites=true&w=majority&appName=ak-solutions-services
+
+")
     .then(() => {
         console.log('Connected to database');
     })
