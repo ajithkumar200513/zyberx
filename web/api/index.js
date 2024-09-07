@@ -4,9 +4,9 @@ const mongoose = require('mongoose');
 const adminroutes = require('./Routes/AdminRoutes');
 const userroutes = require('./Routes/UserRoutes');
 const UserAccessRoutes = require('./Routes/UserAccessRoutes');
-const AdminAccessRoutes = require('./Routes/AdminAccessRoutes')
+const AdminAccessRoutes = require('./Routes/AdminAccessRoutes');
+
 const app = express();
-const PORT = process.env.PORT || 4000;
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -17,21 +17,21 @@ app.use(cors());
 app.use('/Ak_Web/Admin', adminroutes);
 app.use('/Ak_Web/User', userroutes); // General user routes
 app.use('/Ak_Web/UserAccess', UserAccessRoutes); // Specific user access routes
-app.use('/Ak_Web/Admin/', AdminAccessRoutes)
+app.use('/Ak_Web/Admin', AdminAccessRoutes);
+
 // Debugging middleware
 app.use((req, res, next) => {
     console.log(req.path, req.method, req.body);
     next();
 });
 
-// Database connection
-mongoose.connect("mongodb://localhost:27017/FreeLancer")
+// Database connection (You should use environment variables for the MongoDB URL in production)
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/FreeLancer")
     .then(() => {
         console.log('Connected to database');
-        app.listen(PORT, () => {
-            console.log('Listening for requests on port', PORT);
-        });
     })
     .catch((err) => {
         console.log('Database connection error:', err);
     });
+
+module.exports = app;
