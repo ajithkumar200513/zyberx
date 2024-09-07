@@ -11,7 +11,7 @@ export const UseAdminLogin = () => {
     setisLoading(true);
 
     try {
-      const response = await fetch('http://https://vercel.com/ajithkumar200513s-projects/ak-solution-and-service-rg7o/29pH2sLc913nMhoa2Egm2mcYewHj/Ak_Web/Admin/login', {
+      const response = await fetch('https://vercel.com/ajithkumar200513s-projects/ak-solution-and-service-rg7o/29pH2sLc913nMhoa2Egm2mcYewHj/Ak_Web/Admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
