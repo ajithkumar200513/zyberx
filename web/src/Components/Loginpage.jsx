@@ -178,7 +178,7 @@ const Loginpage = () => {
               type="text"
               name="username"
               id="username"
-              placeholder="Enter Your Username"
+              placeholder="Enter Your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
