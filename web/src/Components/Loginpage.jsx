@@ -270,6 +270,7 @@ const Loginpage = () => {
                 >
                   {showPassword ? '👁️' : '👁️‍🗨️'}
                 </span>
+                <p><Link to = '/user/forgotpass'>Forgot password</Link></p>
                 <div className="underline"></div>
               </div>
               <input type="submit" value="Login" />
