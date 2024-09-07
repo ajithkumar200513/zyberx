@@ -48,7 +48,7 @@ const Adminhome = () => {
   }, [Admin.userid]);
 
   const handleApprove = async (e, value) => {
-    e.preventDefault(); // Prevent default behavior if the button is inside a form
+    e.preventDefault();
 
     try {
       const response = await fetch(`http://localhost:4000/Ak_Web/Admin/updatedata/${value}`, {
@@ -60,9 +60,7 @@ const Adminhome = () => {
       });
 
       if (response.ok) {
-        // Show success alert
         alert('Item successfully approved!');
-        // Optionally refresh or update the data to reflect the change
         const updatedData = await response.json();
         setpData(prevData =>
           prevData.map(item =>
@@ -70,7 +68,6 @@ const Adminhome = () => {
           )
         );
       } else {
-        // Handle error response
         alert('Failed to approve item. Please try again.');
       }
     } catch (error) {
@@ -105,14 +102,12 @@ const Adminhome = () => {
             text-align: center;
             padding: 20px;
             margin-bottom: 20px;
-            opacity: 0;
-            animation: fadeIn 1s 0.5s forwards;
           }
           .brand-name {
             font-size: 2rem;
             color: #fff;
             margin-bottom: 10px;
-            animation: pulsate 1.5s infinite;
+            font-weight: bold;
           }
           .tagline {
             font-size: 1.2rem;
@@ -126,7 +121,7 @@ const Adminhome = () => {
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            background-color: rgba(255, 255, 255, 0.9); 
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -201,11 +196,6 @@ const Adminhome = () => {
           @keyframes slideUp {
             from { transform: translateY(20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
-          }
-          @keyframes pulsate {
-            0% { transform: scale(1); color: #fff; }
-            50% { transform: scale(1.1); color: #ffdd57; }
-            100% { transform: scale(1); color: #fff; }
           }
         `}
       </style>

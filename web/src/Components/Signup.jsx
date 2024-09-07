@@ -45,29 +45,24 @@ const Signup = () => {
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
           }
           .header {
             width: 100%;
             text-align: center;
             padding: 20px;
             margin-bottom: 20px;
-            opacity: 0;
-            animation: fadeIn 1s 0.5s forwards;
           }
           .brand-name {
             font-size: 2rem;
             color: #fff;
             margin-bottom: 10px;
-            animation: pulsate 1.5s infinite;
+            font-weight: bold;
           }
           .tagline {
             font-size: 1.2rem;
             color: #fff;
             font-weight: bold;
             margin: 10px 0;
-            animation: slideIn 1s 0.5s forwards;
           }
           .container-signup {
             display: flex;
@@ -77,18 +72,16 @@ const Signup = () => {
             background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             max-width: 500px;
             width: 100%;
-            opacity: 0;
-            animation: slideUp 1s 1s forwards;
           }
           form {
             width: 100%;
           }
           label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             color: #333;
             font-size: 0.9rem;
             text-align: left;
@@ -96,14 +89,14 @@ const Signup = () => {
           input[type="text"],
           input[type="email"],
           input[type="password"] {
-            width: 100%;
-            padding: 10px 15px;
+            width: calc(100% - 22px); /* Adjust width to account for padding and border */
+            padding: 10px;
             border-radius: 8px;
             border: 1px solid #ddd;
             background-color: #f9f9f9;
-            transition: 0.3s;
             margin-bottom: 15px;
             font-size: 0.9rem;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
           }
           input[type="text"]:focus,
           input[type="email"]:focus,
@@ -112,8 +105,10 @@ const Signup = () => {
             background-color: #fff;
             outline: none;
           }
-          input[type="checkbox"] {
-            margin-right: 5px;
+          .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
           }
           .show-password {
             margin-left: 5px;
@@ -131,7 +126,6 @@ const Signup = () => {
             cursor: pointer;
             transition: background-color 0.3s;
             font-size: 1rem;
-            margin-top: 10px;
           }
           button:hover {
             background-color: #0056b3;
@@ -159,23 +153,6 @@ const Signup = () => {
               font-size: 0.9rem;
             }
           }
-          @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-          }
-          @keyframes slideIn {
-            from { transform: translateY(-20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-          }
-          @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-          }
-          @keyframes pulsate {
-            0% { transform: scale(1); color: #fff; }
-            50% { transform: scale(1.1); color: #ffdd57; }
-            100% { transform: scale(1); color: #fff; }
-          }
         `}
       </style>
       <div className="body-signup">
@@ -184,7 +161,7 @@ const Signup = () => {
           <div className="tagline">People Who Want to Take Their Business Online</div>
         </div>
         <div className="container-signup">
-          <form onSubmit={(e) => handleSubmit(e)}>
+          <form onSubmit={handleSubmit}>
             <label>Name</label>
             <input
               type="text"
@@ -213,16 +190,18 @@ const Signup = () => {
               value={password}
               required
             />
-            <input
-              type="checkbox"
-              id="showPassword"
-              onChange={() => setShowPassword(!showPassword)}
-              checked={showPassword}
-            />
-            <label htmlFor="showPassword" className="show-password">
-              Show Password
-            </label>
-            <button type="submit">Submit</button>
+            <div className="checkbox-container">
+              <input
+                type="checkbox"
+                id="showPassword"
+                onChange={() => setShowPassword(!showPassword)}
+                checked={showPassword}
+              />
+              <label htmlFor="showPassword" className="show-password">
+                Show Password
+              </label>
+            </div>
+            <button type="submit">Sign Up</button>
             {Error && <div className="error-message">{Error}</div>}
           </form>
         </div>

@@ -4,6 +4,7 @@ import { UseUserContext } from '../Hooks/UseUserContext';
 
 const UserHome = () => {
   const { logout } = UseUserLogout();
+  const { User } = UseUserContext();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [contactNumber, setContactNumber] = useState('');
@@ -12,7 +13,6 @@ const UserHome = () => {
   const [productDescription, setProductDescription] = useState('');
   const [companyName, setCompanyName] = useState('');
   const [companyAddress, setCompanyAddress] = useState('');
-  const { User } = UseUserContext();
   const [Data, setData] = useState([]);
 
   const handleLogout = () => {
@@ -76,7 +76,7 @@ const UserHome = () => {
     <div className="user-home">
       <header className="header">
         <h1 className="brand-name">AK Solutions and Services</h1>
-        <h3>Fill the form and get the product</h3>
+        <h3 className="tagline">Your Trusted Partner in Success</h3>
       </header>
       <div className="form-container">
         <form onSubmit={handleSubmit} className="user-form">
@@ -86,7 +86,7 @@ const UserHome = () => {
           <label htmlFor='pid'>Email</label>
           <input type='text' id='pid' value={email} onChange={(e) => setEmail(e.target.value)} />
 
-          <label htmlFor='cno'>Contact no</label>
+          <label htmlFor='cno'>Contact No</label>
           <input type='text' id='cno' value={contactNumber} onChange={(e) => setContactNumber(e.target.value)} />
 
           <label htmlFor="address">Address</label>
@@ -143,94 +143,100 @@ const UserHome = () => {
       <style>
         {`
           .user-home {
-            font-family: Arial, sans-serif;
-            background-color: #e0f7fa; /* Light cyan background */
+            font-family: 'Arial', sans-serif;
+            background: #f0f4f8;
             padding: 20px;
             min-height: 100vh;
             color: #333;
             box-sizing: border-box;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
           }
           .header {
             text-align: center;
-            margin-bottom: 20px;
-            opacity: 0;
-            animation: fadeIn 1s 0.5s forwards;
+            margin-bottom: 30px;
           }
           .brand-name {
-            font-size: 2rem;
-            font-weight: bold;
+            font-size: 2.5rem;
             color: #007bff;
-            background: linear-gradient(45deg, #007bff, #00aaff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: pulsate 1.5s infinite;
-            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+          }
+          .tagline {
+            font-size: 1.5rem;
+            color: #555;
+            margin-bottom: 20px;
+            font-weight: 300;
           }
           .form-container {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 800px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 900px;
             margin: auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            animation: slideUp 1s 1s forwards;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border: 1px solid #ddd;
           }
           .user-form label {
             display: block;
             margin: 10px 0 5px;
+            font-weight: bold;
+            color: #333;
           }
           .user-form input,
           .user-form textarea {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
+            padding: 12px;
+            margin-bottom: 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
             box-sizing: border-box;
             font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+          }
+          .user-form input:focus,
+          .user-form textarea:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            outline: none;
           }
           .form-actions {
             display: flex;
             justify-content: flex-end;
-            gap: 10px;
+            gap: 15px;
             margin-top: 20px;
+          }
+          .submit-button,
+          .logout-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            color: white;
+            transition: background-color 0.3s, transform 0.3s;
           }
           .submit-button {
             background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            font-size: 1rem;
           }
           .submit-button:hover {
             background-color: #0056b3;
+            transform: translateY(-2px);
           }
           .logout-button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+            background-color: #dc3545;
           }
           .logout-button:hover {
-            background-color: #0056b3;
+            background-color: #c82333;
+            transform: translateY(-2px);
           }
           .data-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin-top: 30px;
           }
           .data-table th,
           .data-table td {
-            padding: 10px;
+            padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ddd;
           }
@@ -240,29 +246,6 @@ const UserHome = () => {
           }
           .data-table tr:nth-child(even) {
             background-color: #f9f9f9;
-          }
-          @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-          }
-          @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-          }
-          @keyframes pulsate {
-            0% { transform: scale(1); color: #fff; }
-             50% { transform: scale(1.1); color: #ffdd57; }
-            100% { transform: scale(1); color: #fff; }
-          }
-          @media (max-width: 600px) {
-            .user-form input,
-            .user-form textarea {
-              font-size: 0.9rem;
-            }
-            .form-actions {
-              flex-direction: column;
-              gap: 10px;
-            }
           }
         `}
       </style>
