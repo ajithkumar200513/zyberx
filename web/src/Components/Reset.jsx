@@ -10,7 +10,7 @@ const Reset = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    const token = window.location.pathname.split("/").pop();
+    const token = window.location.pathname.split("/").pop(); // Extract token from URL
     if (password === cpass) {
       const response = await fetch(`https://ak-solution-and-service.onrender.com/Ak_Web/User/reset/${token}`, {
         method: 'POST',
