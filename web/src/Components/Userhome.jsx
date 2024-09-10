@@ -135,7 +135,13 @@ const UserHome = () => {
               <td>{item.Name}</td>
               <td>{item.Product_Name}</td>
               <td>{item.Email}</td>
-              <td>{item.Approved ? <p>Approved</p> : <p>Pending</p>}</td>
+              <td>
+             {item.Approved ? (
+            <p style={{ color: '#28a745' }}>Approved</p> 
+            ) : (
+           <p style={{ color: '#dc3545' }}>Pending</p>  
+            )}
+</td>
             </tr>
           )) : <tr><td colSpan="4">Data Not Available</td></tr>}
         </tbody>
