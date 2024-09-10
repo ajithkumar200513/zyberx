@@ -10,7 +10,7 @@ export const UseUserLogin = () => {
         setisLoading(true);
         setError(null);
 
-      const response = await fetch('https://ak-solution-and-service.onrender.com/Ak_Web/Admin/login', {
+      const response = await fetch('https://ak-solution-and-service.onrender.com/Ak_Web/User/login', {
      
       
             method: 'POST',
