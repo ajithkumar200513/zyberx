@@ -34,7 +34,7 @@ const nodemailer = require('nodemailer');
         subject: "Reset Password",
         html: `<h1>Reset Your Password</h1>
       <p>Click on the following link to reset your password:</p>
-      <a href="http://localhost:3000/User/reset/${token}">http://localhost:3000/User/reset/${token}</a>
+      <a href="https://ak-solution-and-service.onrender.com/User/reset/${token}">https://ak-solution-and-service.onrender.com/User/reset/${token}</a>
       <p>The link will expire in 10 minutes.</p>
       <p>If you didn't request a password reset, please ignore this email.</p>`,
       };
