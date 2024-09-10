@@ -23,9 +23,8 @@ app.use((req, res, next) => {
     console.log(req.path, req.method, req.body);
     next();
 });
-
 // Database connection
-mongoose.connect("mongodb://localhost:27017/FreeLancer")
+mongoose.connect("mongodb+srv://ajithkumar200536:AJITH200536%40ak@ak-solutions-services.6dup5.mongodb.net/yourdbname")
     .then(() => {
         console.log('Connected to database');
         app.listen(PORT, () => {
