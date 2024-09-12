@@ -36,7 +36,7 @@ const UserHome = () => {
       Customer_Name: companyName
     };
 
-    const response = await fetch(`https://ak-solution-and-service.onrender.com/Ak_Web/UserAccess/postdata/${User.userid}`, {
+    const response = await fetch(`https://main--merry-kulfi-9e7cd0.netlify.app/Ak_Web/UserAccess/postdata/${User.userid}`, {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
@@ -54,7 +54,7 @@ const UserHome = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`https://ak-solution-and-service.onrender.com/Ak_Web/UserAccess/getdata/${User.userid}`, {
+      const response = await fetch(`https://main--merry-kulfi-9e7cd0.netlify.app/Ak_Web/UserAccess/getdata/${User.userid}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

@@ -11,7 +11,7 @@ export const UseAdminLogin = () => {
     setisLoading(true);
 
     try {
-      const response = await fetch('https://ak-solution-and-service-dq1s-eg3xiv5zy.vercel.app/Ak_Web/Admin/login', {
+      const response = await fetch('https://main--merry-kulfi-9e7cd0.netlify.app/Ak_Web/Admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })

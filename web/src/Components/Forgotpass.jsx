@@ -7,7 +7,7 @@ const Forgotpass = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    const response = await fetch('https://ak-solution-and-service.onrender.com/Ak_Web/User/forgotpass', {
+    const response = await fetch('https://main--merry-kulfi-9e7cd0.netlify.app/Ak_Web/User/forgotpass', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: Email }),
