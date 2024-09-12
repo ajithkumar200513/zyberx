@@ -1,3 +1,4 @@
+import InfoPage from './Components/InfoPage'; // Import from Components folder
 import Loginpage from "./Components/Loginpage";
 import Userhome from "./Components/Userhome";
 import Adminhome from "./Components/Adminhome";
@@ -10,15 +11,18 @@ import Reset from "./Components/Reset";
 
 function App() {
   const { User } = UseUserContext();
-  console.log(User);
   const { Admin } = UseAdminContext();
-  console.log(Admin);
 
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={!Admin && !User ? <Loginpage /> : <Navigate to='/Adminpage' />}></Route>
+          {/* Set InfoPage as the default ("/") route */}
+          <Route path='/' element={<InfoPage />} />
+          
+          {/* Route to Loginpage */}
+          <Route path='/login' element={!Admin && !User ? <Loginpage /> : <Navigate to='/Adminpage' />} />
+          
           <Route path='/Adminpage' element={Admin ? <Adminhome/> : <Navigate to='/Userpage'/>}></Route>
           <Route path='/Userpage' element={User ? <Userhome/> :<Navigate to ='/'/>}></Route>
           <Route path='/User/Signup' element={!User ? <Signup /> :<Navigate to ='/'/>}></Route>
