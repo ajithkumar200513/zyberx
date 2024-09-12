@@ -12,7 +12,7 @@ const Reset = () => {
     e.preventDefault();
     const token = window.location.pathname.split("/").pop(); // Extract token from URL
     if (password === cpass) {
-      const response = await fetch(`https://main--merry-kulfi-9e7cd0.netlify.app/Ak_Web/User/reset/${token}`, {
+      const response = await fetch(`https://ak-solution-and-service.onrender.com/Ak_Web/User/reset/${token}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ newPassword: password }),
