@@ -10,7 +10,7 @@ const Adminhome = () => {
   const [check, setCheck] = useState(false);
 
   const handleBtnClick = async (value) => {
-    const response = await fetch(`https://ak-solution-and-service.onrender.com/Ak_Web/Admin/getdata/${value}`, {
+    const response = await fetch(`https://ak-solution-and-service-dq1s-eg3xiv5zy.vercel.app/Ak_Web/Admin/getdata/${value}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
