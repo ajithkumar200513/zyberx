@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter } from 'react-icons/fa'; // Import updated icons
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const InfoPage = () => {
   const navigate = useNavigate();
@@ -12,9 +12,13 @@ const InfoPage = () => {
   return (
     <div style={styles.container}>
       <header style={styles.header}>
-        <button onClick={handleLoginClick} style={styles.loginButton}>Login</button>
-        <h1 style={styles.brandName}>AK Solutions and Services</h1>
-        <p style={styles.tagline}>Your Trusted Partner in Success</p>
+        <div style={styles.headerContent}>
+          <button onClick={handleLoginClick} style={styles.loginButton}>Login</button>
+          <div>
+            <h1 style={styles.brandName}>AK Solutions and Services</h1>
+            <p style={styles.tagline}>Your Trusted Partner in Success</p>
+          </div>
+        </div>
       </header>
 
       <section style={styles.section}>
@@ -46,7 +50,6 @@ const InfoPage = () => {
       </section>
 
       <footer style={styles.footer}>
-           
         <div style={styles.socialButtons}>
           <a href="#" style={styles.socialButton}><FaFacebookF /></a>
           <a href="#" style={styles.socialButton}><FaLinkedinIn /></a>
@@ -63,31 +66,31 @@ const styles = {
     fontFamily: 'Arial, sans-serif',
     lineHeight: '1.6',
     padding: '20px',
-    backgroundImage: 'url(https://kosichi.ca/wp-content/uploads/2022/06/IT-Solution-Design-Dubai-UAE.jpg)', // Set your background image URL here
+    backgroundImage: 'url(https://kosichi.ca/wp-content/uploads/2022/06/IT-Solution-Design-Dubai-UAE.jpg)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    color: 'black', // Default text color
+    color: 'black',
   },
   header: {
-    textAlign: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black background for contrast
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     color: '#fff',
-    padding: '10px 0',
+    padding: '10px 20px',
     position: 'relative',
-    paddingBottom: '70px', // Ensure space for login button on mobile
+  },
+  headerContent: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   loginButton: {
-    position: 'absolute',
-    top: '10px',
-    right: '10px',
     backgroundColor: '#fff',
-    color: '#1976d2',
+    color: '#fff',
     padding: '10px 20px',
     border: '1px solid #1976d2',
     borderRadius: '5px',
     cursor: 'pointer',
     fontSize: '16px',
-    animation: 'shake 0.5s infinite', // Apply shake animation
+    animation: 'color-change 1.3s infinite', // Adjusted to 1 second for a faster animation
   },
   brandName: {
     fontSize: '2rem',
@@ -98,7 +101,7 @@ const styles = {
   },
   tagline: {
     fontSize: '1.2rem',
-    color: '#e3f2fd', // Light blue color for tagline
+    color: '#e3f2fd',
     textAlign: 'center',
     marginBottom: '30px',
     fontWeight: 'normal',
@@ -106,22 +109,18 @@ const styles = {
   section: {
     margin: '20px 0',
     padding: '15px',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)', // Semi-transparent white for sections
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
     borderRadius: '5px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   },
   sectionTitle: {
-    color: '#1976d2', // Blue color for section titles
+    color: '#1976d2',
   },
   footer: {
     textAlign: 'center',
     marginTop: '30px',
     padding: '10px',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black background
-  },
-  footerLink: {
-    color: '#e3f2fd', // Light blue link color
-    textDecoration: 'none',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   socialButtons: {
     display: 'flex',
@@ -135,31 +134,31 @@ const styles = {
     justifyContent: 'center',
     width: '40px',
     height: '40px',
-    background: '#e3f2fd', // Light blue background for social buttons
+    background: '#e3f2fd',
     borderRadius: '50%',
-    color: '#1976d2', // Blue color for icons
+    color: '#1976d2',
     fontSize: '1.2rem',
-    transition: 'background 0.3s, color 0.3s, transform 0.3s', // Animation properties
+    transition: 'background 0.3s, color 0.3s, transform 0.3s',
   },
 };
 
-// Define keyframes for continuous shake animation
-const keyframes = `
-  @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(0); }
-    75% { transform: translateX(5px); }
-    100% { transform: translateX(0); }
+// Define keyframes for color-change animation
+const styleSheet = document.createElement("style");
+styleSheet.type = "text/css";
+styleSheet.innerText = `
+  @keyframes color-change {
+    0% {
+      background-color: #007bff;
+    }
+    50% {
+      background-color: #1CCAD8;
+    }
+    100% {
+      background-color: #007bff;
+    }
   }
-`;
-
-// Add media queries for responsiveness
-const mediaQueries = `
   @media (max-width: 768px) {
     .loginButton {
-      top: 5px;
-      right: 5px;
       font-size: 14px;
       padding: 8px 16px;
     }
@@ -178,11 +177,6 @@ const mediaQueries = `
     }
   }
 `;
-
-// Inject keyframes and media queries into a <style> element in the document head
-const styleSheet = document.createElement("style");
-styleSheet.type = "text/css";
-styleSheet.innerText = keyframes + mediaQueries;
 document.head.appendChild(styleSheet);
 
 export default InfoPage;
