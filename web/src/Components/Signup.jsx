@@ -13,7 +13,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = { name: Name, email: Email, password: password, phone: PhNo };
-    const response = await fetch('https://ak-solution-and-service.onrender.com/Ak_Web/User/signup', {
+    const response = await fetch('https://ak-solutions-services.netlify.app/Ak_Web/User/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),

@@ -10,7 +10,7 @@ const Adminhome = () => {
   const [check, setCheck] = useState(false);
 
   const handleBtnClick = async (value) => {
-    const response = await fetch(`https://ak-solution-and-service.onrender.com/Ak_Web/Admin/getdata/${value}`, {
+    const response = await fetch(`https://ak-solutions-services.netlify.app/Ak_Web/Admin/getdata/${value}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ const Adminhome = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`https://ak-solution-and-service.onrender.com/Ak_Web/Admin/getdata/`, {
+      const response = await fetch(`https://ak-solutions-services.netlify.app/Ak_Web/Admin/getdata/`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ const Adminhome = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`https://ak-solution-and-service.onrender.com/Ak_Web/Admin/updatedata/${value}`, {
+      const response = await fetch(`https://ak-solutions-services.netlify.app/Ak_Web/Admin/updatedata/${value}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
