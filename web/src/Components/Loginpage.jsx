@@ -29,7 +29,6 @@ const Loginpage = () => {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('https://kosichi.ca/wp-content/uploads/2022/06/IT-Solution-Design-Dubai-UAE.jpg') no-repeat center center fixed;
             background-size: cover;
           }
           .login-container {
@@ -38,10 +37,11 @@ const Loginpage = () => {
             align-items: center;
             height: 100vh;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.6);
+            background:#2F2F2F;
+            
           }
           .login-form-container {
-            background: #fff;
+            background: black;
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -49,17 +49,18 @@ const Loginpage = () => {
             width: 100%;
             opacity: 0;
             animation: fadeIn 1s forwards;
+            
           }
           .brand-name {
             font-size: 2rem;
-            color: #007bff;
+            color: #ffd700; /* Golden color */
             text-align: center;
             margin-bottom: 10px;
             font-weight: bold;
           }
           .tagline {
             font-size: 1.2rem;
-            color: #333;
+            color: #fff;
             text-align: center;
             margin-bottom: 30px;
             font-weight: normal;
@@ -70,7 +71,7 @@ const Loginpage = () => {
           label {
             display: block;
             margin-bottom: 5px;
-            color: #333;
+            color: #fff;
             font-weight: bold;
           }
           input[type="text"],
@@ -86,7 +87,7 @@ const Loginpage = () => {
           input[type="text"]:focus,
           input[type="password"]:focus,
           select:focus {
-            border-color: #007bff;
+            border-color: #ffd700; /* Golden color */
             background-color: #fff;
             outline: none;
           }
@@ -100,8 +101,8 @@ const Loginpage = () => {
           input[type="submit"] {
             width: 100%;
             padding: 12px;
-            background-color: #007bff;
-            color: #fff;
+            background-color: #ffd700; /* Golden color */
+            color: #000;
             font-weight: bold;
             border-radius: 4px;
             border: none;
@@ -109,7 +110,7 @@ const Loginpage = () => {
             transition: background-color 0.3s;
           }
           input[type="submit"]:hover {
-            background-color: #0056b3;
+            background-color: #ffcc00; /* Slightly darker golden color */
           }
           .error-message {
             color: red;
@@ -119,9 +120,11 @@ const Loginpage = () => {
           .form-link {
             text-align: center;
             margin-top: 20px;
+            color: #fff
+            
           }
           .form-link a {
-            color: #007bff;
+            color: #ffd700; /* Golden color */
             text-decoration: none;
           }
           .form-link a:hover {
@@ -139,14 +142,14 @@ const Loginpage = () => {
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: #f1f1f1;
+            background: #ffd700; /* Golden color */
             border-radius: 50%;
-            color: #333;
+            color: #000;
             font-size: 1.2rem;
             transition: background 0.3s, color 0.3s;
           }
           .social-buttons a:hover {
-            background: #007bff;
+            background: #ffcc00; /* Slightly darker golden color */
             color: #fff;
           }
           @keyframes fadeIn {

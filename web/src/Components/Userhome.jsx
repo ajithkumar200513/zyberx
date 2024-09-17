@@ -136,12 +136,12 @@ const UserHome = () => {
               <td>{item.Product_Name}</td>
               <td>{item.Email}</td>
               <td>
-             {item.Approved ? (
-            <p style={{ color: '#28a745' }}>Approved</p> 
-            ) : (
-           <p style={{ color: '#dc3545' }}>Pending</p>  
-            )}
-</td>
+                {item.Approved ? (
+                  <p style={{ color: 'green', textDecoration: 'underline', fontSize:'large' }}>Approved</p> // Golden color
+                ) : (
+                  <p style={{ color: 'red' }}>Pending</p> // White color
+                )}
+              </td>
             </tr>
           )) : <tr><td colSpan="4">Data Not Available</td></tr>}
         </tbody>
@@ -150,10 +150,10 @@ const UserHome = () => {
         {`
           .user-home {
             font-family: 'Arial', sans-serif;
-            background: #f0f4f8;
+            background: #2F2F2F; /* Black background */
+            color: #fff; /* White text */
             padding: 20px;
             min-height: 100vh;
-            color: #333;
             box-sizing: border-box;
           }
           .header {
@@ -162,19 +162,18 @@ const UserHome = () => {
           }
           .brand-name {
             font-size: 2.5rem;
-            color: #007bff;
+            color: #ffd700; /* Golden color */
             margin-bottom: 10px;
             font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
           }
           .tagline {
             font-size: 1.5rem;
-            color: #555;
+            color: #ffd700; /* Golden color */
             margin-bottom: 20px;
             font-weight: 300;
           }
           .form-container {
-            background: #ffffff;
+            background: black; /* White background for form */
             padding: 30px;
             border-radius: 8px;
             max-width: 900px;
@@ -186,7 +185,7 @@ const UserHome = () => {
             display: block;
             margin: 10px 0 5px;
             font-weight: bold;
-            color: #333;
+            color: #fff; /* Dark grey for labels */
           }
           .user-form input,
           .user-form textarea {
@@ -201,8 +200,8 @@ const UserHome = () => {
           }
           .user-form input:focus,
           .user-form textarea:focus {
-            border-color: #007bff;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            border-color: #ffd700; /* Golden color focus border */
+            box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); /* Golden color shadow */
             outline: none;
           }
           .form-actions {
@@ -218,21 +217,23 @@ const UserHome = () => {
             border-radius: 5px;
             cursor: pointer;
             font-size: 1rem;
-            color: white;
+            color: #000; /* Black text */
             transition: background-color 0.3s, transform 0.3s;
           }
           .submit-button {
-            background-color: #007bff;
+            background-color: #ffd700; /* Golden color */
           }
           .submit-button:hover {
-            background-color: #0056b3;
+            background-color: #ffcc00; /* Slightly darker golden color */
             transform: translateY(-2px);
           }
           .logout-button {
-            background-color: #dc3545;
+            background-color: #000; /* Black color */
+            color: #ffd700; /* Golden text */
           }
           .logout-button:hover {
-            background-color: #c82333;
+            background-color: #333; /* Darker black for hover */
+            color: #fff; /* White text for hover */
             transform: translateY(-2px);
           }
           .data-table {
@@ -247,11 +248,11 @@ const UserHome = () => {
             border-bottom: 1px solid #ddd;
           }
           .data-table th {
-            background-color: #007bff;
-            color: white;
+            background-color: #000; /* Black background for header */
+            color: #ffd700; /* Golden text for header */
           }
           .data-table tr:nth-child(even) {
-            background-color: #f9f9f9;
+            background-color: #333; /* Darker grey for even rows */
           }
         `}
       </style>

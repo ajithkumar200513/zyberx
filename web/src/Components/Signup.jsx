@@ -35,7 +35,6 @@ const Signup = () => {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('https://kosichi.ca/wp-content/uploads/2022/06/IT-Solution-Design-Dubai-UAE.jpg') no-repeat center center fixed;
             background-size: cover;
           }
           .body-signup {
@@ -45,6 +44,7 @@ const Signup = () => {
             align-items: center;
             min-height: 100vh;
             padding: 20px;
+            background: #2F2F2F /* Semi-transparent black background */
           }
           .header {
             width: 100%;
@@ -54,7 +54,7 @@ const Signup = () => {
           }
           .brand-name {
             font-size: 2rem;
-            color: #fff;
+            color: #ffd700; /* Golden color */
             margin-bottom: 10px;
             font-weight: bold;
           }
@@ -69,7 +69,7 @@ const Signup = () => {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            background-color: black; 
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -82,7 +82,7 @@ const Signup = () => {
           label {
             display: block;
             margin-bottom: 8px;
-            color: #333;
+            color: #fff;
             font-size: 0.9rem;
             text-align: left;
           }
@@ -101,7 +101,7 @@ const Signup = () => {
           input[type="text"]:focus,
           input[type="email"]:focus,
           input[type="password"]:focus {
-            border-color: #007bff;
+            border-color: #ffd700; /* Golden color */
             background-color: #fff;
             outline: none;
           }
@@ -118,8 +118,8 @@ const Signup = () => {
           button {
             width: 100%;
             padding: 12px;
-            background-color: #007bff;
-            color: white;
+            background-color: #ffd700; /* Golden color */
+            color: #000;
             font-weight: bold;
             border-radius: 8px;
             border: none;
@@ -128,7 +128,7 @@ const Signup = () => {
             font-size: 1rem;
           }
           button:hover {
-            background-color: #0056b3;
+            background-color: #ffcc00; /* Slightly darker golden color */
           }
           .error-message {
             color: red;

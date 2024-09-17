@@ -84,8 +84,8 @@ const Adminhome = () => {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('https://kosichi.ca/wp-content/uploads/2022/06/IT-Solution-Design-Dubai-UAE.jpg') no-repeat center center fixed;
             background-size: cover;
+            background-color:  #2F2F2F;
           }
           .body-admin {
             display: flex;
@@ -105,13 +105,13 @@ const Adminhome = () => {
           }
           .brand-name {
             font-size: 2rem;
-            color: #fff;
+            color: #ffd700; /* Golden color */
             margin-bottom: 10px;
             font-weight: bold;
           }
           .tagline {
             font-size: 1.2rem;
-            color: #fff;
+            color: #fff; /* White color */
             font-weight: bold;
             margin: 10px 0;
             animation: slideIn 1s 0.5s forwards;
@@ -121,10 +121,10 @@ const Adminhome = () => {
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            background-color: rgba(255, 255, 255, 0.9); 
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
             padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             max-width: 900px;
             width: 100%;
             opacity: 0;
@@ -136,13 +136,14 @@ const Adminhome = () => {
           }
           h2 {
             margin-bottom: 20px;
-            color: #333;
+            color: #ffd700; /* Golden color */
             font-size: 1.8rem;
           }
           table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
+            color: #fff; /* White color for table text */
           }
           th, td {
             padding: 12px;
@@ -150,21 +151,21 @@ const Adminhome = () => {
             text-align: center;
           }
           th {
-            background-color: #007bff;
-            color: white;
+            background-color: #000; /* Black background for header */
+            color: #ffd700; /* Golden text for header */
           }
           button {
             padding: 8px 12px;
             border: none;
-            background-color: #007bff;
-            color: white;
+            background-color: #ffd700; /* Golden color */
+            color: #000;
             font-weight: bold;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
           }
           button:hover {
-            background-color: #0056b3;
+            background-color: #ffcc00; /* Slightly darker golden color */
           }
           .error-message {
             color: red;

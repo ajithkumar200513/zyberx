@@ -28,7 +28,6 @@ const Forgotpass = () => {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('https://kosichi.ca/wp-content/uploads/2022/06/IT-Solution-Design-Dubai-UAE.jpg') no-repeat center center fixed;
             background-size: cover;
           }
           .forgotpass-container {
@@ -37,10 +36,10 @@ const Forgotpass = () => {
             align-items: center;
             height: 100vh;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.6);
+            background: #2F2F2F; /* Semi-transparent black background */
           }
           .forgotpass-form-container {
-            background: #fff;
+            background: black;
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -55,12 +54,12 @@ const Forgotpass = () => {
           }
           .forgotpass-header h2 {
             font-size: 1.8rem;
-            color: #007bff;
+            color: #ffd700; /* Golden color */
             margin-bottom: 10px;
             font-weight: bold;
           }
           .forgotpass-header p {
-            color: #333;
+            color: #fff;
           }
           .form-group {
             margin-bottom: 20px;
@@ -68,7 +67,7 @@ const Forgotpass = () => {
           label {
             display: block;
             margin-bottom: 5px;
-            color: #333;
+            color: #fff;
             font-weight: bold;
           }
           input[type="text"] {
@@ -80,15 +79,15 @@ const Forgotpass = () => {
             transition: border-color 0.3s, background-color 0.3s;
           }
           input[type="text"]:focus {
-            border-color: #007bff;
+            border-color: #ffd700; /* Golden color */
             background-color: #fff;
             outline: none;
           }
           button {
             width: 100%;
             padding: 12px;
-            background-color: #007bff;
-            color: #fff;
+            background-color: #ffd700; /* Golden color */
+            color: #000;
             font-weight: bold;
             border-radius: 4px;
             border: none;
@@ -96,7 +95,7 @@ const Forgotpass = () => {
             transition: background-color 0.3s;
           }
           button:hover {
-            background-color: #0056b3;
+            background-color: #ffcc00; /* Slightly darker golden color */
           }
           .error-message {
             color: red;
