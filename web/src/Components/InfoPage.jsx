@@ -92,7 +92,8 @@ const styles = {
     borderRadius: '5px',
     cursor: 'pointer',
     fontSize: '16px',
-    animation: 'color-change 1.3s infinite',
+    animation: 'color-change 2s infinite',
+    color:'white'
   },
   logoContainer: {
     display: 'flex',
@@ -158,7 +159,7 @@ styleSheet.innerText = `
       background-color: #ffd700; // Golden color
     }
     50% {
-      background-color: #ffcc00; // Slightly darker golden color
+      background-color: black; // Slightly darker golden color
     }
     100% {
       background-color: #ffd700; // Golden color
