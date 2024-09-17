@@ -53,8 +53,8 @@ const InfoPage = () => {
         <div style={styles.socialButtons}>
           <a href="#" style={styles.socialButton}><FaFacebookF /></a>
           <a href="#" style={styles.socialButton}><FaLinkedinIn /></a>
-          <a href="#" style={styles.socialButton}><FaInstagram /></a>
-          <a href="#" style={styles.socialButton}><FaTwitter /></a>
+          <a href="https://www.instagram.com/zyberxss/?igsh=a3VmM3FkbXhwOTVw" style={styles.socialButton}><FaInstagram /></a>
+          <a href="https://x.com/ZyberxSs" style={styles.socialButton}><FaTwitter /></a>
         </div>
       </footer>
     </div>

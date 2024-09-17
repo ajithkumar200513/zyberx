@@ -211,8 +211,8 @@ const Loginpage = () => {
         <div className="social-buttons">
           <a href="#"><FaFacebookF /></a>
           <a href="#"><FaLinkedinIn /></a>
-          <a href="#"><FaInstagram /></a>
-          <a href="#"><FaTwitter /></a>
+          <a href="https://www.instagram.com/zyberxss/?igsh=a3VmM3FkbXhwOTVw"><FaInstagram /></a>
+          <a href="https://x.com/ZyberxSs"><FaTwitter /></a>
         </div>
         {error && <div className="error-message">{error}</div>}
         {usererror && <div className="error-message">{usererror}</div>}
