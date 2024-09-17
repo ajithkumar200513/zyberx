@@ -115,9 +115,10 @@ const styles = {
   section: {
     margin: '20px 0',
     padding: '15px',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    backgroundColor: 'rgba(255, 255, 255, 0.3)',
     borderRadius: '5px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    color:'#fff'
   },
   sectionTitle: {
     color: '#ffd700', // Golden color
