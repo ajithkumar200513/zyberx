@@ -15,8 +15,8 @@ const InfoPage = () => {
         <div style={styles.headerContent}>
           <button onClick={handleLoginClick} style={styles.loginButton}>Login</button>
           <div>
-            <h1 style={styles.brandName}>AK Solutions and Services</h1>
-            <p style={styles.tagline}>Your Trusted Partner in Success</p>
+            <h1 style={styles.brandName}>ZyberX </h1>
+            <p style={styles.tagline}>Innovate Beyond Boundaries</p>
           </div>
         </div>
       </header>
@@ -24,7 +24,7 @@ const InfoPage = () => {
       <section style={styles.section}>
         <h2 style={styles.sectionTitle}>What We Do</h2>
         <p>
-          At AK Solutions & Services, we specialize in helping businesses thrive in the digital world.
+          At ZyberX Solutions & Services, we specialize in helping businesses thrive in the digital world.
           Whether you need a professional website, a mobile app, or internet services, we're here to take
           your business online and drive success.
         </p>

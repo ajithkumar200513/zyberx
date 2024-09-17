@@ -202,8 +202,8 @@ const Adminhome = () => {
 
       <div className="body-admin">
         <div className="header">
-          <div className="brand-name">AK Solutions and Services</div>
-          <div className="tagline">Managing Projects Efficiently</div>
+          <div className="brand-name">ZyberX</div>
+          <div className="tagline">Innovate Beyond Boundaries</div>
         </div>
         <div className="container">
           <main className="container-log">

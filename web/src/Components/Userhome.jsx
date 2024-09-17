@@ -75,8 +75,8 @@ const UserHome = () => {
   return (
     <div className="user-home">
       <header className="header">
-        <h1 className="brand-name">AK Solutions and Services</h1>
-        <h3 className="tagline">Your Trusted Partner in Success</h3>
+        <h1 className="brand-name">ZyberX</h1>
+        <h3 className="tagline">Innovate Beyond Boundaries</h3>
       </header>
       <div className="form-container">
         <form onSubmit={handleSubmit} className="user-form">

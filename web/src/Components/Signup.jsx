@@ -157,8 +157,8 @@ const Signup = () => {
       </style>
       <div className="body-signup">
         <div className="header">
-          <div className="brand-name">AK Solutions and Services</div>
-          <div className="tagline">People Who Want to Take Their Business Online</div>
+          <div className="brand-name">ZyberX</div>
+          <div className="tagline">Innovate Beyond Boundaries</div>
         </div>
         <div className="container-signup">
           <form onSubmit={handleSubmit}>

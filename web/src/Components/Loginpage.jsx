@@ -157,8 +157,8 @@ const Loginpage = () => {
       </style>
 
       <div className="login-form-container">
-        <div className="brand-name">AK Solutions and Services</div>
-        <div className="tagline">Your Trusted Partner in Success</div>
+        <div className="brand-name">ZyberX</div>
+        <div className="tagline">Innovate Beyond Boundaries</div>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="user">Select User Type</label>
