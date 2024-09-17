@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter } from 'react-icons/fa';
+import logo from '../Components/logo.png'; // Ensure this path is correct
 
 const InfoPage = () => {
   const navigate = useNavigate();
@@ -14,8 +15,8 @@ const InfoPage = () => {
       <header style={styles.header}>
         <div style={styles.headerContent}>
           <button onClick={handleLoginClick} style={styles.loginButton}>Login</button>
-          <div>
-            <h1 style={styles.brandName}>ZyberX </h1>
+          <div style={styles.logoContainer}>
+            <img src={logo} alt="ZyberX Logo" style={styles.logo} />
             <p style={styles.tagline}>Innovate Beyond Boundaries</p>
           </div>
         </div>
@@ -66,7 +67,7 @@ const styles = {
     fontFamily: 'Arial, sans-serif',
     lineHeight: '1.6',
     padding: '20px',
-    backgroundImage: 'url(https://kosichi.ca/wp-content/uploads/2022/06/IT-Solution-Design-Dubai-UAE.jpg)',
+    backgroundColor: 'black',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     color: 'black',
@@ -79,31 +80,36 @@ const styles = {
   },
   headerContent: {
     display: 'flex',
-    justifyContent: 'space-between',
     alignItems: 'center',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap', // Ensures items wrap on small screens
   },
   loginButton: {
-    backgroundColor: '#fff',
-    color: '#fff',
+    backgroundColor: '#ffd700', // Golden color
+    color: '#000', // Text color for contrast
     padding: '10px 20px',
-    border: '1px solid #1976d2',
+    border: '1px solid #ffcc00', // Slightly darker golden border
     borderRadius: '5px',
     cursor: 'pointer',
     fontSize: '16px',
-    animation: 'color-change 1.3s infinite', // Adjusted to 1 second for a faster animation
+    animation: 'color-change 1.3s infinite',
   },
-  brandName: {
-    fontSize: '2rem',
-    color: '#fff',
-    textAlign: 'center',
-    marginBottom: '10px',
-    fontWeight: 'bold',
+  logoContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    flex: 1,
+    textAlign: 'center', // Center text and logo
+  },
+  logo: {
+    width: '120px', // Adjust size as needed
+    height: 'auto',
   },
   tagline: {
     fontSize: '1.2rem',
-    color: '#e3f2fd',
+    color: '#f1c40f', // Lighter golden color
     textAlign: 'center',
-    marginBottom: '30px',
+    marginTop: '10px',
     fontWeight: 'normal',
   },
   section: {
@@ -114,7 +120,7 @@ const styles = {
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   },
   sectionTitle: {
-    color: '#1976d2',
+    color: '#ffd700', // Golden color
   },
   footer: {
     textAlign: 'center',
@@ -134,27 +140,27 @@ const styles = {
     justifyContent: 'center',
     width: '40px',
     height: '40px',
-    background: '#e3f2fd',
+    background: '#ffd700', // Golden color
     borderRadius: '50%',
-    color: '#1976d2',
+    color: '#000', // Icon color for contrast
     fontSize: '1.2rem',
     transition: 'background 0.3s, color 0.3s, transform 0.3s',
   },
 };
 
-// Define keyframes for color-change animation
+// Define keyframes for color-change animation with golden theme
 const styleSheet = document.createElement("style");
 styleSheet.type = "text/css";
 styleSheet.innerText = `
   @keyframes color-change {
     0% {
-      background-color: #007bff;
+      background-color: #ffd700; // Golden color
     }
     50% {
-      background-color: #1CCAD8;
+      background-color: #ffcc00; // Slightly darker golden color
     }
     100% {
-      background-color: #007bff;
+      background-color: #ffd700; // Golden color
     }
   }
   @media (max-width: 768px) {
@@ -162,8 +168,8 @@ styleSheet.innerText = `
       font-size: 14px;
       padding: 8px 16px;
     }
-    .brandName {
-      font-size: 1.5rem;
+    .logo {
+      width: 70px; // Adjust size for mobile
     }
     .tagline {
       font-size: 1rem;
