@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter, FaSun, FaMoon } from 'react-icons/fa';
 import logo from '../Components/logo.png'; // Ensure this path is correct
 
 const InfoPage = () => {
   const navigate = useNavigate();
+  const [isDarkTheme, setIsDarkTheme] = useState(true); // Default to dark theme
 
   const handleLoginClick = () => {
     navigate('/login'); // Navigate to login page
   };
 
+  const toggleTheme = () => {
+    setIsDarkTheme((prevTheme) => !prevTheme); // Toggle theme
+  };
+
   return (
-    <div style={styles.container}>
+    <div style={isDarkTheme ? styles.darkContainer : styles.lightContainer}>
       <header style={styles.header}>
         <div style={styles.headerContent}>
           <button onClick={handleLoginClick} style={styles.loginButton}>Login</button>
@@ -19,6 +24,9 @@ const InfoPage = () => {
             <img src={logo} alt="ZyberX Logo" style={styles.logo} />
             <p style={styles.tagline}>Innovate Beyond Boundaries</p>
           </div>
+          <button onClick={toggleTheme} style={styles.themeToggleButton}>
+            {isDarkTheme ? <FaSun style={styles.icon} /> : <FaMoon style={styles.icon} />}
+          </button>
         </div>
       </header>
 
@@ -63,13 +71,18 @@ const InfoPage = () => {
 };
 
 const styles = {
-  container: {
+  darkContainer: {
     fontFamily: 'Arial, sans-serif',
     lineHeight: '1.6',
     padding: '20px',
     backgroundColor: 'black',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    color: 'white',
+  },
+  lightContainer: {
+    fontFamily: 'Arial, sans-serif',
+    lineHeight: '1.6',
+    padding: '20px',
+    backgroundColor: 'white',
     color: 'black',
   },
   header: {
@@ -92,8 +105,6 @@ const styles = {
     borderRadius: '5px',
     cursor: 'pointer',
     fontSize: '16px',
-    animation: 'color-change 2s infinite',
-    color:'white'
   },
   logoContainer: {
     display: 'flex',
@@ -119,7 +130,6 @@ const styles = {
     backgroundColor: 'rgba(255, 255, 255, 0.3)',
     borderRadius: '5px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    color:'#fff'
   },
   sectionTitle: {
     color: '#ffd700', // Golden color
@@ -148,43 +158,19 @@ const styles = {
     fontSize: '1.2rem',
     transition: 'background 0.3s, color 0.3s, transform 0.3s',
   },
+  themeToggleButton: {
+    background: 'transparent',
+    border: 'none',
+    cursor: 'pointer',
+    padding: '10px',
+  },
+  icon: {
+    fontSize: '1.5rem',
+    color: '#ffd700', // Icon color
+  },
 };
 
-// Define keyframes for color-change animation with golden theme
-const styleSheet = document.createElement("style");
-styleSheet.type = "text/css";
-styleSheet.innerText = `
-  @keyframes color-change {
-    0% {
-      background-color: #ffd700; // Golden color
-    }
-    50% {
-      background-color: black; // Slightly darker golden color
-    }
-    100% {
-      background-color: #ffd700; // Golden color
-    }
-  }
-  @media (max-width: 768px) {
-    .loginButton {
-      font-size: 14px;
-      padding: 8px 16px;
-    }
-    .logo {
-      width: 70px; // Adjust size for mobile
-    }
-    .tagline {
-      font-size: 1rem;
-    }
-    .section {
-      margin: 10px 0;
-      padding: 10px;
-    }
-    .footer {
-      padding: 5px;
-    }
-  }
-`;
-document.head.appendChild(styleSheet);
+// Define keyframes for color-change animation if needed
+// Add additional styles as required
 
 export default InfoPage;
