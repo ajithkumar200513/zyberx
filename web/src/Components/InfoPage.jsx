@@ -65,6 +65,7 @@ const InfoPage = () => {
           <a href="https://www.instagram.com/zyberxss/?igsh=a3VmM3FkbXhwOTVw" style={styles.socialButton}><FaInstagram /></a>
           <a href="https://x.com/ZyberxSs" style={styles.socialButton}><FaTwitter /></a>
         </div>
+        <p style={styles.copyright}>© {new Date().getFullYear()} ZyberX Solutions & Services. All rights reserved.</p>
       </footer>
     </div>
   );
@@ -168,9 +169,11 @@ const styles = {
     fontSize: '1.5rem',
     color: '#ffd700', // Icon color
   },
+  copyright: {
+    marginTop: '20px',
+    color: '#ffd700', // Golden color for consistency
+    fontSize: '0.9rem',
+  },
 };
-
-// Define keyframes for color-change animation if needed
-// Add additional styles as required
 
 export default InfoPage;
