@@ -2,23 +2,26 @@ import React, { useState } from 'react';
 import { UseAdminLogin } from '../Hooks/UseAdminLogin';
 import { UseUserLogin } from '../Hooks/UseUserLogin';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter } from 'react-icons/fa'; // Import updated icons
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Loginpage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [type, setType] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
   const { Adminlogin, error } = UseAdminLogin();
   const { Userlogin, usererror } = UseUserLogin();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Set loading to true
     if (type === 'Admin') {
       await Adminlogin(email, password);
     } else if (type === 'User') {
       await Userlogin(email, password);
     }
+    setLoading(false); // Set loading to false after login
   };
 
   return (
@@ -37,8 +40,7 @@ const Loginpage = () => {
             align-items: center;
             height: 100vh;
             padding: 20px;
-            background:#2F2F2F;
-            
+            background: #2F2F2F;
           }
           .login-form-container {
             background: black;
@@ -49,11 +51,10 @@ const Loginpage = () => {
             width: 100%;
             opacity: 0;
             animation: fadeIn 1s forwards;
-            
           }
           .brand-name {
             font-size: 2rem;
-            color: #ffd700; /* Golden color */
+            color: #ffd700;
             text-align: center;
             margin-bottom: 10px;
             font-weight: bold;
@@ -87,7 +88,7 @@ const Loginpage = () => {
           input[type="text"]:focus,
           input[type="password"]:focus,
           select:focus {
-            border-color: #ffd700; /* Golden color */
+            border-color: #ffd700;
             background-color: #fff;
             outline: none;
           }
@@ -98,10 +99,14 @@ const Loginpage = () => {
             transform: translateY(-50%);
             cursor: pointer;
           }
-          input[type="submit"] {
+          .login-btn {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 100%;
             padding: 12px;
-            background-color: #ffd700; /* Golden color */
+            background-color: #ffd700;
             color: #000;
             font-weight: bold;
             border-radius: 4px;
@@ -109,8 +114,20 @@ const Loginpage = () => {
             cursor: pointer;
             transition: background-color 0.3s;
           }
-          input[type="submit"]:hover {
-            background-color: #ffcc00; /* Slightly darker golden color */
+          .login-btn:hover {
+            background-color: #ffcc00;
+          }
+          .loading-circle {
+            border: 4px solid #fff;
+            border-top: 4px solid #ffd700;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+          }
+          @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
           }
           .error-message {
             color: red;
@@ -120,11 +137,10 @@ const Loginpage = () => {
           .form-link {
             text-align: center;
             margin-top: 20px;
-            color: #fff
-            
+            color: #fff;
           }
           .form-link a {
-            color: #ffd700; /* Golden color */
+            color: #ffd700;
             text-decoration: none;
           }
           .form-link a:hover {
@@ -142,14 +158,14 @@ const Loginpage = () => {
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: #ffd700; /* Golden color */
+            background: #ffd700;
             border-radius: 50%;
             color: #000;
             font-size: 1.2rem;
             transition: background 0.3s, color 0.3s;
           }
           .social-buttons a:hover {
-            background: #ffcc00; /* Slightly darker golden color */
+            background: #ffcc00;
             color: #fff;
           }
           @keyframes fadeIn {
@@ -205,7 +221,9 @@ const Loginpage = () => {
               </span>
             </div>
           </div>
-          <input type="submit" value="Login" />
+          <button className="login-btn" type="submit" disabled={loading}>
+            {loading ? <div className="loading-circle"></div> : 'Login'}
+          </button>
         </form>
         <div className="form-link">
           <p><Link to='/user/forgotpass'>Forgot password?</Link></p>
